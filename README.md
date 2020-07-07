@@ -26,3 +26,8 @@ usethat::use_vignette("introduction") # use "usethat" if devtools > 2.1.0
 Use this to install the package once it has been committed to github
 
 devtools::install_github("yourusername/myfirstpackage")
+
+
+Other packages using Isotopes:
+
+https://cran.r-project.org/web/packages/IsotopeR/index.html
