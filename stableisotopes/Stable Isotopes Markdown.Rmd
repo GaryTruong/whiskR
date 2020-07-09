@@ -1,0 +1,89 @@
+---
+title: "Isotopes Analysis Package - Mammal Lab"
+author: "Gary Truong and Ben Walker"
+date: "07/07/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+install.packages("devtools")
+install.packages("roxygen2")
+devtools::create("stableisotopes")
+```
+
+
+```{r}
+x <- (92.6-(14*(0.0126*141.5)))/(1-(14*0.0126))
+
+# LP1 calculates the cut section length that should be cut to obtain a defined time period. 
+LP1 <- function(L, Time, k, L.asym){
+  section = format((L - (Time*(k*L.asym)))/(1-(Time*k)), digits = 4, nsmall = 1)
+  paste(section, "mm", sep = "")
+}
+# k is estimated from seal whiskers and adapted for devils, assumption that whiskers fall out after 1 year
+# L.asym is asymptotic length which is longest recorded length + 1% at the given position
+# L is length of cut or plucked whisker
+# Time is specified numnber of days represented by sample
+# This function does not factor in intradermal length 
+
+LP1(156.2,75, 0.0126, 171.4)
+
+LP1(129.5, 14, 0.0126, 150.3)
+LP1(125.045, 14, 0.0126, 150.3)
+
+#TP1 calculates the time period that is represented based on a cut section 
+TP1 <- function(Lp, Lp1, k, L.asym){
+  time = format((Lp - Lp1)/(k*(L.asym-Lp1)), digits = 3, nsmall = 0)
+  paste(time, "days", sep = " ")
+}
+
+ ## Simple Von Bertanlanffy equation for L and T
+## L = L.asym * (1-exp(-KT))
+## T = (-log(1-156.2/171.4))/(0.0126)
+  
+
+# MaxTime uses simple Von Bertanlanffy model (growth function) to caclulate maximum theoretically time that the sample whisker represents
+MaxTime <- function(L , L.asym, k){
+  Time = format((-log(1-L/L.asym))/(k), digits = 4, nsmall = 1)
+  paste(Time, "days", sep = " ")
+}
+
+
+MaxTime(169.7, 171.4, 0.0126)  
+
+#Intra time calculates the days represented by the intradermal length
+Intra.time <- function(L.int, L.asym, L, k){
+  time = format((L.int)/(k*(L.asym - (L - L.int))), digits = 3, nsmall = 0)
+  paste(time, "days", sep = " ")
+}
+
+Intra.time(5.3, 163.4, 127.8, 0.0126)
+
+## Vindi 
+MaxTime(127.8, 163.4, 0.0126)
+
+#Vindi sampled on 1st August 2018 , 120.9 max days, should go back to april 
+
+Date
+
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
