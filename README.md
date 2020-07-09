@@ -36,3 +36,5 @@ Function names:
 LP0 -> total length of the thing
 LP1() -> length of the thing after you cut it (should include -1)
 CheckNLoad() -> checking for a package and loading it
+() -> time segment for whisker (i.e. seciton 3 will be winter)
+() -> choosing this whisker length and this segment days to tell me which whiskers have this season (winter, for e.g.) in them
