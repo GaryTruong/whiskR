@@ -9,6 +9,8 @@ https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/
 
 http://r-pkgs.had.co.nz/  # This is Hadley Wickham's guide for writing packages
 
+https://www.int-res.com/articles/meps2005/305/m305p249.pdf?fbclid=IwAR1oOcdst_Ztl6g3es-XdcmgmjRCo2NMcEwpW0URHPrJ8jl2olM-MqhiX7U # Traceys paper with all the Von Bertanlanffy equations
+
 Useful functions from devtools
 
 devtools::create() # create a new package with the required folders
