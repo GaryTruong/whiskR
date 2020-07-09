@@ -31,3 +31,8 @@ devtools::install_github("yourusername/myfirstpackage")
 Other packages using Isotopes:
 
 https://cran.r-project.org/web/packages/IsotopeR/index.html
+
+Function names:
+LP0 -> total length of the thing
+LP1() -> length of the thing after you cut it (should include -1)
+CheckNLoad() -> checking for a package and loading it
