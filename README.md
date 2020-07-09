@@ -36,7 +36,7 @@ https://cran.r-project.org/web/packages/IsotopeR/index.html
 
 Function names:
 LP0() -> total length of the thing
-LP1() -> length of the thing after you cut it (should include -1)
+LP1() -> length of the thing after you cut it (should include -1) n/
 CheckNLoad() -> checking for a package and loading it
 date.range.segment -> dates of the length of the whisker
 season.segment() -> time segment for whisker (i.e. seciton 3 will be winter)
