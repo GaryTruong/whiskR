@@ -1,4 +1,4 @@
-# WhiskR or GrowR
+# whiskR
 
 Mammal Lab collaboration to write an R package for isotope analysis
 
@@ -20,6 +20,17 @@ devtools::document() # generate documentation for the individual functions in th
 devtools::use_vignette() # create a vignette for the package if devtools < 2.1.0
 
 usethat::use_vignette("introduction") # use "usethat" if devtools > 2.1.0
+
+# Implement testthat
+
+
+# testthat to test that 
+
+
+#pkgdown for the website
+
+
+# Create a vignette.
 
 
 
