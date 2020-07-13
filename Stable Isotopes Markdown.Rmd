@@ -8,6 +8,8 @@ output: html_document
 ```{r setup, include=FALSE}
 #install.packages("devtools")
 #install.packages("roxygen2")
+install.packages("usethat")
+
 
 library(devtools)
 library(roxygen2)
@@ -96,5 +98,11 @@ devtools::load_all()
 
 devtools::install()
 library(whiskR)
+```
+
+Create a vignette
+```{r}
+library(usethat)
+usethat::use_vignette("introduction")
 ```
 

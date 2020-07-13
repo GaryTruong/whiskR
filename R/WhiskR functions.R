@@ -53,8 +53,8 @@ k <- function(ML, L.asym, Time){
 }
 
 
-
-
+#' Calculate intradermal
+#' @export
 Intra.time <- function(L.int, L.asym, L, k){
   time = format((L.int)/(k*(L.asym - (L - L.int))), digits = 3, nsmall = 0)
   paste(time, "days", sep = " ")
