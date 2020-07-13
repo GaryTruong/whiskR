@@ -1,4 +1,4 @@
-# WhiskR or GrowR
+# whiskR
 
 Mammal Lab collaboration to write an R package for isotope analysis
 
