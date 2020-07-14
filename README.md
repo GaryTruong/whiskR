@@ -75,3 +75,8 @@ season.segment() -> time segment for whisker (i.e. seciton 3 will be winter)
 
 season.section() -> choosing this whisker length and this segment days to tell me which whiskers have this season (winter, for e.g.) in them
 
+
+
+# packagesthat are published
+
+https://onlinelibrary.wiley.com/doi/pdf/10.1002/jrsm.1424?casa_token=HXmVubsx1qUAAAAA:C3xbIgvbpyFAIapAmiSbaQ3L-pcN9kO2f-UC0hzY5OpDbA3ifnqkvOmg_9rjjihXHWA2Qo7tM8xf4-YtrQ
