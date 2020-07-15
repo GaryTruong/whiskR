@@ -42,7 +42,7 @@ library(whiskR)
 
 ## 3.1 Calculating *k* (growth coefficient)
 
-```{r}
+```{r, eval = F}
 k()
 ```
 
@@ -52,10 +52,9 @@ k()
 The LP1() function is used to calculate the specific length of segment required to be in order to obtain a sample that represents a specific amount of time 
 
 L is length
-```{r}
+```{r, eval = F}
 LP1()
 
-?LP1
 ```
 
 
@@ -63,8 +62,8 @@ LP1()
 
 TP1() is used to calculate how much time is represented by a given segment of whisker. 
 
-```{r}
-
+```{r, eval = F}
+TP1()
 ```
 
 

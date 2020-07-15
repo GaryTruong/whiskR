@@ -9,7 +9,11 @@ Authors@R: c(
     person("Ben",
            "Walker",
            role = "aut",
-           email = "ben.walker@unsw.edu.au"))
+           email = "ben.walker@unsw.edu.au"),
+    person("Anna",
+           "Lewis",
+           role = c("aut"),
+           email = "annacllewis@gmail.com"))
 Description: Stable isotope analysis on whisker samples. Use the functions 
     in this package to calculate k(growth coefficient), calculate sample length
     based on time, calculate time represented by sample section, calculate max
