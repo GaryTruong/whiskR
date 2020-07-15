@@ -4,6 +4,7 @@ To install `whiskR` in R:
 
 ```
 devtools::install_github("GaryTruong/whiskR")
+library(whiskR)
 ```
 
 
