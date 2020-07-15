@@ -1,5 +1,7 @@
 # whiskR
 
+website: [`whiskR`](https://GaryTruong.github.io/whiskR)
+
 To install `whiskR` in R:
 
 ```
