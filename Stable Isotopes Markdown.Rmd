@@ -8,7 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 #install.packages("devtools")
 #install.packages("roxygen2")
-install.packages("usethat")
+# install.packages("usethis")
 
 
 library(devtools)
@@ -98,11 +98,28 @@ devtools::load_all()
 
 devtools::install()
 library(whiskR)
+
+devtools::install_github("GaryTruong/whiskR")
 ```
 
 Create a vignette
 ```{r}
-library(usethat)
-usethat::use_vignette("introduction")
+library(usethis)
+usethis::use_vignette("introduction")
+getwd()
+```
+
+Website
+```{r}
+# not working for R 4.0.2
+#install.packages("rpkgdown")
+
+devtools::install_github("r-lib/pkgdown")
+library(rpkgdown)
+
+# Run once to configure package to use pkgdown
+usethis::use_pkgdown()
+# Run to build the website
+pkgdown::build_site()
 ```
 
