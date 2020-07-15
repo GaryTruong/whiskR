@@ -12,41 +12,6 @@ Mammal Lab collaboration to write an R package for isotope analysis
 
 Collaborators: Gary, Ben, Anna 
 
-Some useful links
-https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/
-
-http://r-pkgs.had.co.nz/  # This is Hadley Wickham's guide for writing packages
-
-https://www.int-res.com/articles/meps2005/305/m305p249.pdf?fbclid=IwAR1oOcdst_Ztl6g3es-XdcmgmjRCo2NMcEwpW0URHPrJ8jl2olM-MqhiX7U # Traceys paper with all the Von Bertanlanffy equations
-
-Useful functions from devtools
-
-devtools::create() # create a new package with the required folders
-
-devtools::document() # generate documentation for the individual functions in the package
-
-devtools::use_vignette() # create a vignette for the package if devtools < 2.1.0
-
-usethat::use_vignette("introduction") # use "usethat" if devtools > 2.1.0
-
-# Implement testthat
-
-
-# testthat to test that 
-
-
-#pkgdown for the website
-
-
-# Create a vignette.
-
-
-
-
-
-Use this to install the package once it has been committed to github
-
-devtools::install_github("yourusername/myfirstpackage")
 
 
 Other packages using Isotopes:
