@@ -1,7 +1,7 @@
 ---
-title: "whiskR: An R package for calculating Von Bertanlanffy growth model variables for the purpose of stable isotope analysis"
+title: "whiskR: An R package for calculating Von Bertanlanffy growth model variables"
 output: rmarkdown::html_vignette
-authors:  Gary Truong, Ben Walker
+authors:  Gary Truong, Ben Walker, Anna Lewis
 vignette: >
   %\VignetteIndexEntry{introduction}
   %\VignetteEngine{knitr::rmarkdown}
@@ -27,9 +27,9 @@ Variables that are used include whisker length, asymptotic length, the growth co
 
 To install `whiskR` in R:
 
-```{r setup}
+```{r setup, eval = F}
 # Install pacman 
-# install.packages("pacman")
+install.packages("pacman")
 
 pacman::p_load(devtools)
 
@@ -38,18 +38,33 @@ devtools::install_github("GaryTruong/whiskR")
 library(whiskR)
 ```
 
-# 3. whiskR functions
+# 3. whiskR functions examples
 
-## 3.1 Calculating segment length
+## 3.1 Calculating *k* (growth coefficient)
+
+```{r}
+k()
+```
+
+
+## 3.2 Calculating segment length
 
 The LP1() function is used to calculate the specific length of segment required to be in order to obtain a sample that represents a specific amount of time 
 
+L is length
+```{r}
+LP1()
+
+?LP1
+```
 
 
-## 3.2 Calculating the time represented by a segment
+## 3.3 Calculating the time represented by a segment
 
 TP1() is used to calculate how much time is represented by a given segment of whisker. 
 
-## 3.3 Calculating k (growth coefficient)
+```{r}
+
+```
 
 

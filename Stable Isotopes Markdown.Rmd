@@ -109,7 +109,7 @@ usethis::use_vignette("introduction")
 getwd()
 ```
 
-Website
+Creating  Website
 ```{r}
 # not working for R 4.0.2
 #install.packages("rpkgdown")
