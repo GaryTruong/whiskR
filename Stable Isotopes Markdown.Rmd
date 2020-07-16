@@ -122,3 +122,70 @@ usethis::use_pkgdown()
 pkgdown::build_site()
 ```
 
+```{r}
+LP1(150,170,14,0.0126)
+LP1(145.7,170,14,0.0126)
+LP1(140.5,170,14,0.0126)
+LP1(134.2,170,14,0.0126)
+LP1(126.5,170,14,0.0126)
+LP1(117.2,170,14,0.0126)
+LP1(105.9,170,14,0.0126)
+LP1(92.17,170,14,0.0126)
+LP1(75.5,170,14,0.0126)
+LP1(55.26,170,14,0.0126)
+LP1(30.68,170,14.3,0.0126)
+
+14*11
+TP1(L=150 ,L.asym=170, LP1=140.5, k=0.0126)
+
+14*12
+MaxTime(150,170,0.0126)
+library(dplyr)
+
+sample <- function(L, L.asym, Time, k){
+  a <- as.numeric(whiskR::LP1(L, L.asym, Time, k)) 
+  b <- as.numeric(whiskR::LP1(L, L.asym, Time, k)) %>%
+    whiskR::LP1(L.asym, Time, k)
+  as.numeric(c(a,b,Time))
+}
+a <- c()
+a <- c(1)
+b <- c(a)
+sample(150,170,14,0.0126)
+
+
+
+section <- function(L, L.asym, Time, k){
+  out <- list(0)
+  a <- as.numeric(whiskR::LP1(L, L.asym, Time, k)) 
+  out[1] <- a
+  out[2] <- Time
+  out[3] <- L
+  out[[3]][2] <- a
+  for(i in 1:30){
+    if(a > 0){
+      a <- as.numeric(out[[1]][i]) %>% 
+      whiskR::LP1(170, 14, 0.0126)
+      out[[1]][i+1] = a
+      out[[2]][i+1] = Time
+      out[[3]][i+2] = a
+    }else{
+    stop
+    }
+  }
+  x <- tibble::enframe(as.numeric(out[[3]])) %>%
+    select(name, L = value)
+  y <- tibble::enframe(as.numeric(out[[2]])) %>% 
+    select(name, time = value)
+  z <- tibble::enframe(as.numeric(out[[1]])) %>%
+    select(name,Lp1 = value)
+  x %>% left_join(z) %>% left_join(y)%>%
+    filter(Lp1 >0)
+}
+
+
+b <- section(150,170,14,0.0126)
+
+
+```
+

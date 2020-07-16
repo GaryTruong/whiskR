@@ -19,7 +19,7 @@
 #'
 LP1 <- function(L, L.asym, Time, k){
   section = format((L - (Time*(k*L.asym)))/(1-(Time*k)), digits = 4, nsmall = 1)
-  section
+  as.numeric(section)
 }
 #paste(section, "mm", sep = "")
 
@@ -43,7 +43,7 @@ LP1 <- function(L, L.asym, Time, k){
 #'
 TP1 <- function(L, L.asym, LP1, k){
   time = format((L - LP1)/(k*(L.asym-LP1)), digits = 3, nsmall = 0)
-  time
+  as.numeric(time)
 }
 #paste(Time, "days", sep = " ")
 
@@ -66,7 +66,7 @@ TP1 <- function(L, L.asym, LP1, k){
 #'
 k <- function(L.max, L.asym, Time){
   k = format((-log(1-L.max/L.asym))/(Time), digits = 4)
-  k
+  as.numeric(k)
 }
 
 
@@ -86,7 +86,7 @@ k <- function(L.max, L.asym, Time){
 #' IntraTime(L = 140, L.int = 10, L.asym = 150, k = 0.0126)
 IntraTime <- function(L, L.int, L.asym, k){
   time = format((L.int)/(k*(L.asym - (L - L.int))), digits = 3, nsmall = 0)
-  time
+  as.numeric(time)
 }
 #paste(time, "days", sep = " ")
 
@@ -105,6 +105,35 @@ IntraTime <- function(L, L.int, L.asym, k){
 #' MaxTime(L = 140, L.asym = 150, k = 0.0126)
 MaxTime <- function(L , L.asym, k){
   time = format((-log(1-L/L.asym))/(k), digits = 4, nsmall = 1)
-  time
+  as.numeric(time)
 }
 #paste(Time, "days", sep = " ")
+
+
+section <- function(L, L.asym, Time, k){
+  out <- list(0)
+  a <- as.numeric(whiskR::LP1(L, L.asym, Time, k))
+  out[1] <- a
+  out[2] <- Time
+  out[3] <- L
+  out[[3]][2] <- a
+  for(i in 1:30){
+    if(a > 0){
+      a <- as.numeric(out[[1]][i]) %>%
+        whiskR::LP1(170, 14, 0.0126)
+      out[[1]][i+1] = a
+      out[[2]][i+1] = Time
+      out[[3]][i+2] = a
+    }else{
+      stop
+    }
+  }
+  x <- tibble::enframe(as.numeric(out[[3]])) %>%
+    select(name, L = value)
+  y <- tibble::enframe(as.numeric(out[[2]])) %>%
+    select(name, time = value)
+  z <- tibble::enframe(as.numeric(out[[1]])) %>%
+    select(name,Lp1 = value)
+  x %>% left_join(z) %>% left_join(y)%>%
+    filter(Lp1 >0)
+}
