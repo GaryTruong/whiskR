@@ -8,7 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 #install.packages("devtools")
 #install.packages("roxygen2")
-# install.packages("usethis")
+#install.packages("usethis")
 
 
 library(devtools)

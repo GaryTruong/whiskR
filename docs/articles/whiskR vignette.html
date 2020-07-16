@@ -54,6 +54,9 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="../articles/introduction.html">introduction</a>
+    </li>
+    <li>
       <a href="../articles/whiskR%20vignette.html">whiskR: An R package for calculating Von Bertanlanffy growth model variables</a>
     </li>
   </ul>
@@ -94,16 +97,14 @@
 <h1 class="hasAnchor">
 <a href="#installation" class="anchor"></a>2. Installation</h1>
 <p>To install <code>whiskR</code> in R:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="co"># Install pacman </span>
+<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="co"># Install pacman </span>
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"pacman"</span>)
 
-<span class="kw">pacman</span>::<span class="fu"><a href="https://rdrr.io/pkg/pacman/man/p_load.html">p_load</a></span>(<span class="kw">devtools</span>)
+<span class="kw pkg">pacman</span><span class="kw ns">::</span><span class="fu">p_load</span>(<span class="no">devtools</span>)
 
 <span class="co"># Install whiskR</span>
-<span class="kw">devtools</span>::<span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"GaryTruong/whiskR"</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw">whiskR</span>)
-</pre></div>
+<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"GaryTruong/whiskR"</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">whiskR</span>)</pre></body></html></div>
 </div>
 <div id="whiskr-functions-examples" class="section level1">
 <h1 class="hasAnchor">
@@ -111,32 +112,25 @@
 <div id="calculating-k-growth-coefficient" class="section level2">
 <h2 class="hasAnchor">
 <a href="#calculating-k-growth-coefficient" class="anchor"></a>3.1 Calculating <em>k</em> (growth coefficient)</h2>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu"><a href="../reference/k.html">k</a></span>()
-</pre></div>
+<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="../reference/k.html">k</a></span>()</pre></body></html></div>
 </div>
 <div id="calculating-segment-length" class="section level2">
 <h2 class="hasAnchor">
 <a href="#calculating-segment-length" class="anchor"></a>3.2 Calculating segment length</h2>
 <p>The LP1() function is used to calculate the specific length of segment required to be in order to obtain a sample that represents a specific amount of time</p>
 <p>L is length</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="fu"><a href="../reference/LP1.html">LP1</a></span>()
-</pre></div>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="../reference/LP1.html">LP1</a></span>()</pre></body></html></div>
 </div>
 <div id="calculating-the-time-represented-by-a-segment" class="section level2">
 <h2 class="hasAnchor">
 <a href="#calculating-the-time-represented-by-a-segment" class="anchor"></a>3.3 Calculating the time represented by a segment</h2>
 <p>TP1() is used to calculate how much time is represented by a given segment of whisker.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="fu"><a href="../reference/TP1.html">TP1</a></span>()
-</pre></div>
+<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="../reference/TP1.html">TP1</a></span>()</pre></body></html></div>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-
         <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
     </nav>
 </div>
@@ -150,7 +144,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

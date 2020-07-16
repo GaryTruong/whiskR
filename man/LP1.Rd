@@ -7,24 +7,32 @@
 LP1(L, L.asym, Time, k)
 }
 \arguments{
-\item{L}{Length of the cut whisker}
+\item{L}{numeric; length of the cut sample}
 
-\item{L.asym}{Asymptotic length}
+\item{L.asym}{numeric; asymptotic length for the sample}
 
-\item{Time}{Time period to be represented by the cut segment in days}
+\item{Time}{numeric; time period to be represented by the cut segment in days}
 
-\item{k}{Growth coefficient, calculate using the function k}
+\item{k}{numeric; growth coefficient, calculate using the function k}
 }
 \value{
 Where to cut along the whisker
 }
 \description{
 This function allows you calculate where to cut to represent a specific time period.
+It uses the discrete step by step Von Bertanlanffy equation
 }
 \examples{
 LP1(L=100, L.asym=150,Time=28 k=0.0126)
 
 }
-\keyword{length}
+\references{
+Hall-Aspland, S. A., Rogers, T. L., & Canfield, R. B. (2005). Stable carbon and nitrogen isotope analysis reveals seasonal variation in the diet of leopard seals. Marine Ecology Progress Series, 305, 249-259.
+}
+\author{
+
+}
+\keyword{Von-Bertanlanffy}
+\keyword{length,}
 \keyword{segment}
 \keyword{whisker}

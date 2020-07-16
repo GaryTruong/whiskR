@@ -8,13 +8,11 @@
 
 <title>Calculate Time Represented by Segment — TP1 • whiskR</title>
 
-
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
@@ -38,9 +36,11 @@
 
 
 
-
 <meta property="og:title" content="Calculate Time Represented by Segment — TP1" />
-<meta property="og:description" content="This function allows you calculate how much time is represented by a sampled section of whisker." />
+
+<meta property="og:description" content="This function allows you calculate how much time is represented by a sampled section of whisker.
+It uses the discrete step by step Von Bertanlanffy equation" />
+
 
 
 
@@ -95,11 +95,15 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
+      <a href="../articles/introduction.html">introduction</a>
+    </li>
+    <li>
       <a href="../articles/whiskR vignette.html">whiskR: An R package for calculating Von Bertanlanffy growth model variables</a>
     </li>
   </ul>
 </li>
       </ul>
+      
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
@@ -121,11 +125,14 @@
     </div>
 
     <div class="ref-description">
-    <p>This function allows you calculate how much time is represented by a sampled section of whisker.</p>
+    
+    <p>This function allows you calculate how much time is represented by a sampled section of whisker.
+It uses the discrete step by step Von Bertanlanffy equation</p>
+    
     </div>
 
-    <pre class="usage"><span class='fu'>TP1</span>(<span class='kw'>L</span>, <span class='kw'>L.asym</span>, <span class='kw'>LP1</span>, <span class='kw'>k</span>)</pre>
-
+    <pre class="usage"><span class='fu'>TP1</span>(<span class='no'>L</span>, <span class='no'>L.asym</span>, <span class='no'>LP1</span>, <span class='no'>k</span>)</pre>
+    
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -146,13 +153,15 @@
       <td><p>Growth coefficient, calculate using the function k</p></td>
     </tr>
     </table>
-
+    
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Time represented by the sampled segment in days</p>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>TP1</span>(L=<span class='fl'>100</span>, L.asym=<span class='fl'>150</span>, LP1=<span class='fl'>90</span>, k=<span class='fl'>0.0126</span>)</div><div class='output co'>#&gt; [1] "13.2 days"</div><div class='input'></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>TP1</span>(<span class='kw'>L</span><span class='kw'>=</span><span class='fl'>100</span>, <span class='kw'>L.asym</span><span class='kw'>=</span><span class='fl'>150</span>, <span class='kw'>LP1</span><span class='kw'>=</span><span class='fl'>90</span>, <span class='kw'>k</span><span class='kw'>=</span><span class='fl'>0.0126</span>)</div><div class='output co'>#&gt; [1] "13.2 days"</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -168,7 +177,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

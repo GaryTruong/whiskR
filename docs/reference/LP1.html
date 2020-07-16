@@ -8,13 +8,11 @@
 
 <title>Calculate Segment Length — LP1 • whiskR</title>
 
-
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
@@ -38,9 +36,11 @@
 
 
 
-
 <meta property="og:title" content="Calculate Segment Length — LP1" />
-<meta property="og:description" content="This function allows you calculate where to cut to represent a specific time period." />
+
+<meta property="og:description" content="This function allows you calculate where to cut to represent a specific time period.
+It uses the discrete step by step Von Bertanlanffy equation" />
+
 
 
 
@@ -95,11 +95,15 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
+      <a href="../articles/introduction.html">introduction</a>
+    </li>
+    <li>
       <a href="../articles/whiskR vignette.html">whiskR: An R package for calculating Von Bertanlanffy growth model variables</a>
     </li>
   </ul>
 </li>
       </ul>
+      
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
@@ -121,35 +125,43 @@
     </div>
 
     <div class="ref-description">
-    <p>This function allows you calculate where to cut to represent a specific time period.</p>
+    
+    <p>This function allows you calculate where to cut to represent a specific time period.
+It uses the discrete step by step Von Bertanlanffy equation</p>
+    
     </div>
 
-    <pre class="usage"><span class='fu'>LP1</span>(<span class='kw'>L</span>, <span class='kw'>L.asym</span>, <span class='kw'>Time</span>, <span class='kw'>k</span>)</pre>
-
+    <pre class="usage"><span class='fu'>LP1</span>(<span class='no'>L</span>, <span class='no'>L.asym</span>, <span class='no'>Time</span>, <span class='no'>k</span>)</pre>
+    
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>L</th>
-      <td><p>Length of the cut whisker</p></td>
+      <td><p>numeric; length of the cut sample</p></td>
     </tr>
     <tr>
       <th>L.asym</th>
-      <td><p>Asymptotic length</p></td>
+      <td><p>numeric; asymptotic length for the sample</p></td>
     </tr>
     <tr>
       <th>Time</th>
-      <td><p>Time period to be represented by the cut segment in days</p></td>
+      <td><p>numeric; time period to be represented by the cut segment in days</p></td>
     </tr>
     <tr>
       <th>k</th>
-      <td><p>Growth coefficient, calculate using the function k</p></td>
+      <td><p>numeric; growth coefficient, calculate using the function k</p></td>
     </tr>
     </table>
-
+    
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Where to cut along the whisker</p>
+    
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Hall-Aspland, S. A., Rogers, T. L., &amp; Canfield, R. B. (2005). Stable carbon and nitrogen isotope analysis reveals seasonal variation in the diet of leopard seals. Marine Ecology Progress Series, 305, 249-259.</p>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"></pre>
@@ -168,7 +180,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

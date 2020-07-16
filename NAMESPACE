@@ -2,5 +2,6 @@
 
 export(Intra.time)
 export(LP1)
+export(MaxTime)
 export(TP1)
 export(k)

@@ -20,6 +20,7 @@ Time represented by the sampled segment in days
 }
 \description{
 This function allows you calculate how much time is represented by a sampled section of whisker.
+It uses the discrete step by step Von Bertanlanffy equation
 }
 \examples{
 TP1(L=100, L.asym=150, LP1=90, k=0.0126)
