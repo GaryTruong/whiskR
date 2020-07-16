@@ -1,6 +1,10 @@
 # whiskR
 
-website: [`whiskR`](https://GaryTruong.github.io/whiskR)
+
+
+The whiskR package uses the Von Bertanlanffy growth model equations to calculate the different variables needed for stable isotope analysis of whiskers or any other tissue types that have non-linear growth. 
+
+Our website and vignette can be found using the link: [`whiskR`](https://GaryTruong.github.io/whiskR) 
 
 To install `whiskR` in R:
 
@@ -10,29 +14,9 @@ library(whiskR)
 ```
 
 
-Mammal Lab collaboration to write an R package for isotope analysis
+The whiskR package is a collaboration between members of the mammal lab from the Evolution and Ecology Research Centre at the University of New South Wales
 
 Collaborators: Gary, Ben, Anna
 
 
 
-Other packages using Isotopes:
-
-https://cran.r-project.org/web/packages/IsotopeR/index.html
-
-
-
-
-
-
-
-
-# packages that are published
-
-https://onlinelibrary.wiley.com/doi/pdf/10.1002/jrsm.1424?casa_token=HXmVubsx1qUAAAAA:C3xbIgvbpyFAIapAmiSbaQ3L-pcN9kO2f-UC0hzY5OpDbA3ifnqkvOmg_9rjjihXHWA2Qo7tM8xf4-YtrQ
-
-# website stuff
-
-https://www.r-bloggers.com/building-a-website-with-pkgdown-a-short-guide/
-
-https://dev.to/programliftoff/create-your-first-website-on-github-pages
