@@ -2,30 +2,39 @@
 % Please edit documentation in R/WhiskR functions.R
 \name{TP1}
 \alias{TP1}
-\title{Calculate Time Represented by Segment}
+\title{Calculate Time Represented by Cut Segment}
 \usage{
 TP1(L, L.asym, LP1, k)
 }
 \arguments{
-\item{L}{Length of the cut whisker}
+\item{L}{numeric; length of the sample}
 
-\item{L.asym}{Asymptotic length}
+\item{L.asym}{numeric; asymptotic length}
 
-\item{LP1}{Length of the whisker minus the cut sampled segment}
+\item{LP1}{numeric; length of the sample minus the cut sampled segment}
 
-\item{k}{Growth coefficient, calculate using the function k}
+\item{k}{numeric; growth coefficient, calculate using the function k}
 }
 \value{
-Time represented by the sampled segment in days
+The value returned is the number of days represented by the cut segment.
 }
 \description{
-This function allows you calculate how much time is represented by a sampled section of whisker.
-It uses the discrete step by step Von Bertanlanffy equation
+\code{TP1} allows you calculate how much time is represented by a section of sampled tissue.
+It uses the discrete step by step von Bertanlanffy equation solved for time
 }
 \examples{
-TP1(L=100, L.asym=150, LP1=90, k=0.0126)
+TP1(L = 100, L.asym = 150, LP1 = 90, k = 0.0126)
 
+}
+\references{
+Hall-Aspland, S. A., Rogers, T. L., & Canfield, R. B. (2005). Stable carbon and nitrogen isotope
+analysis reveals seasonal variation in the diet of leopard seals. Marine Ecology Progress Series, 305, 249-259.
+}
+\author{
+The function was written by Gary Truong with collaboration from Ben Walker
+and Anna Lewis from the University of New South Wales
 }
 \keyword{segment}
 \keyword{time}
+\keyword{von-Bertanlanffy}
 \keyword{whisker}

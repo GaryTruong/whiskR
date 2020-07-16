@@ -2,37 +2,40 @@
 % Please edit documentation in R/WhiskR functions.R
 \name{LP1}
 \alias{LP1}
-\title{Calculate Segment Length}
+\title{Calculate Segment Length Based on Specific Time Period}
 \usage{
 LP1(L, L.asym, Time, k)
 }
 \arguments{
-\item{L}{numeric; length of the cut sample}
+\item{L}{numeric; length of the sample}
 
-\item{L.asym}{numeric; asymptotic length for the sample}
+\item{L.asym}{numeric; asymptotic length}
 
-\item{Time}{numeric; time period to be represented by the cut segment in days}
+\item{Time}{numeric; time period in days to be represented by the cut segment}
 
 \item{k}{numeric; growth coefficient, calculate using the function k}
 }
 \value{
-Where to cut along the whisker
+The value returned is the location in millimetres, along the sample, to be cut to obtain a segment
+representing the number of days indicated by the Time argument
 }
 \description{
-This function allows you calculate where to cut to represent a specific time period.
-It uses the discrete step by step Von Bertanlanffy equation
+\code{LP1} allows you calculate where to cut to represent a specific time period.
+It uses the discrete step by step von Bertanlanffy equation solved for L(p-1)
 }
 \examples{
-LP1(L=100, L.asym=150,Time=28 k=0.0126)
+LP1(L = 100, L.asym = 150, Time = 28, k = 0.0126)
 
 }
 \references{
-Hall-Aspland, S. A., Rogers, T. L., & Canfield, R. B. (2005). Stable carbon and nitrogen isotope analysis reveals seasonal variation in the diet of leopard seals. Marine Ecology Progress Series, 305, 249-259.
+Hall-Aspland, S. A., Rogers, T. L., & Canfield, R. B. (2005). Stable carbon and nitrogen isotope
+analysis reveals seasonal variation in the diet of leopard seals. Marine Ecology Progress Series, 305, 249-259.
 }
 \author{
-
+The function was written by Gary Truong with collaboration from Ben Walker
+and Anna Lewis from the University of New South Wales
 }
-\keyword{Von-Bertanlanffy}
 \keyword{length,}
 \keyword{segment}
+\keyword{von-Bertanlanffy}
 \keyword{whisker}

@@ -2,27 +2,36 @@
 % Please edit documentation in R/WhiskR functions.R
 \name{k}
 \alias{k}
-\title{Calculate k growth coefficient}
+\title{Calculate k Growth Coefficient}
 \usage{
-k(ML, L.asym, Time)
+k(L.max, L.asym, Time)
 }
 \arguments{
-\item{ML}{Maximum length}
+\item{L.max}{numeric; maximum length observed across all samples}
 
-\item{L.asym}{Asymptotic length}
+\item{L.asym}{numeric; asymptotic length}
 
-\item{Time}{Estimated time to reach maximum length}
+\item{Time}{numeric; estimated time to reach maximum length}
 }
 \value{
-Time represented by the sampled segment in days
+The value returned is the growth coefficient 'k' used in the von Bertanlanffy growth model
 }
 \description{
-Calculate k growth coefficient
+The \code{k} function is used to calculate the growth coefficient 'k' used in the von Bertanlanffy growth models.
 }
 \examples{
-k(L= 100, )
+k(L.max = 148.5, L.asym = 150, Time = 365)
 
 }
-\keyword{coefficient}
+\references{
+Hall-Aspland, S. A., Rogers, T. L., & Canfield, R. B. (2005). Stable carbon and nitrogen isotope
+analysis reveals seasonal variation in the diet of leopard seals. Marine Ecology Progress Series, 305, 249-259.
+}
+\author{
+The function was written by Gary Truong with collaboration from Ben Walker
+and Anna Lewis from the University of New South Wales
+}
+\keyword{coefficient,}
 \keyword{growth}
 \keyword{k}
+\keyword{von-Bertanlanffy}

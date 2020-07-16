@@ -2,10 +2,30 @@
 % Please edit documentation in R/WhiskR functions.R
 \name{MaxTime}
 \alias{MaxTime}
-\title{Calculate Maximum Time represented by sample}
+\title{Calculate Maximum Time Represented by Sample}
 \usage{
 MaxTime(L, L.asym, k)
 }
-\description{
-This function uses the simple Von Bertanlanffy equations to calculate the time represented by the entire sample
+\arguments{
+\item{L}{numeric; length of the entire sample}
+
+\item{L.asym}{numeric; asymptotic length}
+
+\item{k}{numeric; growth coefficient, calculate using the function k}
 }
+\value{
+The value returned is the number of days represented by the entire sample
+}
+\description{
+\code{MaxTime} uses the simple Von Bertanlanffy equations to calculate the time represented by the entire sample
+}
+\examples{
+MaxTime(L = 140, L.asym = 150, k = 0.0126)
+}
+\author{
+The function was written by Gary Truong with collaboration from Ben Walker
+and Anna Lewis from the University of New South Wales
+}
+\keyword{intradermal}
+\keyword{time}
+\keyword{von-Bertanlanffy}

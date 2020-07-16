@@ -105,8 +105,7 @@ devtools::install_github("GaryTruong/whiskR")
 Create a vignette
 ```{r}
 library(usethis)
-usethis::use_vignette("introduction")
-getwd()
+#usethis::use_vignette("whiskR vignette")
 ```
 
 Creating  Website

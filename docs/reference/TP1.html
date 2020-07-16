@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculate Time Represented by Segment — TP1 • whiskR</title>
+<title>Calculate Time Represented by Cut Segment — TP1 • whiskR</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -36,10 +36,10 @@
 
 
 
-<meta property="og:title" content="Calculate Time Represented by Segment — TP1" />
+<meta property="og:title" content="Calculate Time Represented by Cut Segment — TP1" />
 
-<meta property="og:description" content="This function allows you calculate how much time is represented by a sampled section of whisker.
-It uses the discrete step by step Von Bertanlanffy equation" />
+<meta property="og:description" content="TP1 allows you calculate how much time is represented by a section of sampled tissue.
+It uses the discrete step by step von Bertanlanffy equation solved for time" />
 
 
 
@@ -95,9 +95,6 @@ It uses the discrete step by step Von Bertanlanffy equation" />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/introduction.html">introduction</a>
-    </li>
-    <li>
       <a href="../articles/whiskR vignette.html">whiskR: An R package for calculating Von Bertanlanffy growth model variables</a>
     </li>
   </ul>
@@ -119,15 +116,15 @@ It uses the discrete step by step Von Bertanlanffy equation" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Calculate Time Represented by Segment</h1>
+    <h1>Calculate Time Represented by Cut Segment</h1>
     
     <div class="hidden name"><code>TP1.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>This function allows you calculate how much time is represented by a sampled section of whisker.
-It uses the discrete step by step Von Bertanlanffy equation</p>
+    <p><code>TP1</code> allows you calculate how much time is represented by a section of sampled tissue.
+It uses the discrete step by step von Bertanlanffy equation solved for time</p>
     
     </div>
 
@@ -138,29 +135,34 @@ It uses the discrete step by step Von Bertanlanffy equation</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>L</th>
-      <td><p>Length of the cut whisker</p></td>
+      <td><p>numeric; length of the sample</p></td>
     </tr>
     <tr>
       <th>L.asym</th>
-      <td><p>Asymptotic length</p></td>
+      <td><p>numeric; asymptotic length</p></td>
     </tr>
     <tr>
       <th>LP1</th>
-      <td><p>Length of the whisker minus the cut sampled segment</p></td>
+      <td><p>numeric; length of the sample minus the cut sampled segment</p></td>
     </tr>
     <tr>
       <th>k</th>
-      <td><p>Growth coefficient, calculate using the function k</p></td>
+      <td><p>numeric; growth coefficient, calculate using the function k</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Time represented by the sampled segment in days</p>
+    <p>The value returned is the number of days represented by the cut segment.</p>
+    
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Hall-Aspland, S. A., Rogers, T. L., &amp; Canfield, R. B. (2005). Stable carbon and nitrogen isotope
+analysis reveals seasonal variation in the diet of leopard seals. Marine Ecology Progress Series, 305, 249-259.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>TP1</span>(<span class='kw'>L</span><span class='kw'>=</span><span class='fl'>100</span>, <span class='kw'>L.asym</span><span class='kw'>=</span><span class='fl'>150</span>, <span class='kw'>LP1</span><span class='kw'>=</span><span class='fl'>90</span>, <span class='kw'>k</span><span class='kw'>=</span><span class='fl'>0.0126</span>)</div><div class='output co'>#&gt; [1] "13.2 days"</div><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'>TP1</span>(<span class='kw'>L</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>L.asym</span> <span class='kw'>=</span> <span class='fl'>150</span>, <span class='kw'>LP1</span> <span class='kw'>=</span> <span class='fl'>90</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>0.0126</span>)</div><div class='output co'>#&gt; [1] "13.2"</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
