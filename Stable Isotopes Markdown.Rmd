@@ -13,6 +13,8 @@ output: html_document
 
 library(devtools)
 library(roxygen2)
+library(tidyverse)
+
 # devtools::create("whiskR")
 ```
 
@@ -157,7 +159,7 @@ sample(150,170,14,0.0126)
 
 
 
-section <- function(L, L.asym, Time, k){
+section <- function(L, L.asym, k, Time = 1){
   out <- list(0)
   a <- as.numeric(whiskR::LP1(L, L.asym, Time, k)) 
   out[1] <- a
@@ -165,7 +167,7 @@ section <- function(L, L.asym, Time, k){
   out[3] <- L
   out[[3]][2] <- a
   for(i in 1:1000){
-    if(a > 0){
+    if(a > 0 & a < L){
       a <- as.numeric(out[[1]][i]) %>% 
       whiskR::LP1(L.asym, Time, k)
       out[[1]][i+1] = a
@@ -176,19 +178,21 @@ section <- function(L, L.asym, Time, k){
     }
   }
   x <- tibble::enframe(as.numeric(out[[3]])) %>%
-    select(name, L = value)
+    dplyr::select(name, L.start = value)
   y <- tibble::enframe(as.numeric(out[[2]])) %>% 
-    select(name, time = value)
+    dplyr::select(name, time = value)
   z <- tibble::enframe(as.numeric(out[[1]])) %>%
-    select(name,Lp1 = value)
+    dplyr::select(name,L.end = value)
   x %>% left_join(z) %>% left_join(y)%>%
-    filter(Lp1 >0) %>%
-    mutate(SectionLength = L-Lp1, Date = date())
+    dplyr::filter(L.end > 0) %>%
+    dplyr::mutate(SectionLength = L.start-L.end, Date = date())
 }
 
 
-b <- section(150,170,14,0.0126)
+b <- section(150,170, 0.0126, 5)
 
 
+MaxTime(150,170,0.0126)
 ```
 
+14*11
