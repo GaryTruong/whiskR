@@ -100,6 +100,8 @@ devtools::install()
 library(whiskR)
 
 devtools::install_github("GaryTruong/whiskR")
+library(whiskR)
+?k
 ```
 
 Create a vignette
