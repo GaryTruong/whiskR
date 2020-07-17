@@ -162,10 +162,10 @@ section <- function(L, L.asym, Time, k){
   out[2] <- Time
   out[3] <- L
   out[[3]][2] <- a
-  for(i in 1:30){
+  for(i in 1:1000){
     if(a > 0){
       a <- as.numeric(out[[1]][i]) %>% 
-      whiskR::LP1(170, 14, 0.0126)
+      whiskR::LP1(L.asym, Time, k)
       out[[1]][i+1] = a
       out[[2]][i+1] = Time
       out[[3]][i+2] = a
@@ -180,7 +180,8 @@ section <- function(L, L.asym, Time, k){
   z <- tibble::enframe(as.numeric(out[[1]])) %>%
     select(name,Lp1 = value)
   x %>% left_join(z) %>% left_join(y)%>%
-    filter(Lp1 >0)
+    filter(Lp1 >0) %>%
+    mutate(SectionLength = L-Lp1, Date = date())
 }
 
 
