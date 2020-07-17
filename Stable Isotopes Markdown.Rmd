@@ -195,4 +195,10 @@ b <- section(150,170, 0.0126, 5)
 MaxTime(150,170,0.0126)
 ```
 
-14*11
+```{r}
+usethis::use_testthat()
+
+
+devtools::test()
+```
+
