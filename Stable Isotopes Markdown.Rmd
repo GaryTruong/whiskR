@@ -109,7 +109,7 @@ library(whiskR)
 Create a vignette
 ```{r}
 library(usethis)
-#usethis::use_vignette("whiskR vignette")
+usethis::use_vignette("whiskR_vignette")
 ```
 
 Creating  Website
@@ -200,5 +200,7 @@ usethis::use_testthat()
 
 
 devtools::test()
+
+use_travis()
 ```
 

@@ -1,0 +1,88 @@
+---
+title: "whiskR: An R package for calculating Von Bertanlanffy growth model variables"
+output: rmarkdown::html_vignette
+authors:  Gary Truong, Ben Walker, Anna Lewis
+vignette: >
+  %\VignetteIndexEntry{whiskR_vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Gary Truong, Ben Walker, Anna Lewis
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>")
+```
+
+# 1. Introduction
+
+`whiskR` is used for calculating segment lengths of whiskers and working out how many days are represented by each segment. 
+
+The formulas used in the functions are derived from the Von Bertanlanffy growth model equations.
+
+Variables that are used include whisker length, asymptotic length, the growth coefficient k and time.  
+
+# 2. Installation
+
+To install `whiskR` in R:
+
+```{r setup, eval = F}
+# Install pacman 
+install.packages("pacman")
+
+pacman::p_load(devtools)
+
+# Install whiskR
+devtools::install_github("GaryTruong/whiskR")
+library(whiskR)
+```
+
+# 3. whiskR functions examples
+
+## 3.1 Calculating *k* (growth coefficient)
+
+```{r, eval = F}
+k()
+```
+
+
+## 3.2 Calculating segment length
+
+The LP1() function is used to calculate the specific length of segment required to be in order to obtain a sample that represents a specific amount of time 
+
+L is length
+```{r, eval = F}
+LP1()
+
+```
+
+
+## 3.3 Calculating the time represented by a segment
+
+TP1() is used to calculate how much time is represented by a given segment of whisker. 
+
+```{r, eval = F}
+TP1()
+```
+
+
+---
+title: "whiskR_vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{whiskR_vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(whiskR)
+```
