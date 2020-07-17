@@ -1,4 +1,4 @@
-library(testthat)
-library(whiskR)
-
-test_check("whiskR")
+# library(testthat)
+# library(whiskR)
+#
+# test_check("whiskR")
