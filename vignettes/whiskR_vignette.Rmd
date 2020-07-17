@@ -3,7 +3,7 @@ title: "whiskR: An R package for calculating Von Bertanlanffy growth model varia
 output: rmarkdown::html_vignette
 authors:  Gary Truong, Ben Walker, Anna Lewis
 vignette: >
-  %\VignetteIndexEntry{whiskR_vignette}
+  %\VignetteIndexEntry{whiskR: An R package for calculating Von Bertanlanffy growth model variables}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -27,7 +27,7 @@ Variables that are used include whisker length, asymptotic length, the growth co
 
 To install `whiskR` in R:
 
-```{r setup, eval = F}
+```{r, eval = F}
 # Install pacman 
 install.packages("pacman")
 

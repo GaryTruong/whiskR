@@ -8,11 +8,13 @@
 
 <title>Calculate k Growth Coefficient — k • whiskR</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
@@ -36,10 +38,9 @@
 
 
 
+
 <meta property="og:title" content="Calculate k Growth Coefficient — k" />
-
 <meta property="og:description" content="The k function is used to calculate the growth coefficient 'k' used in the von Bertanlanffy growth models." />
-
 
 
 
@@ -96,10 +97,12 @@
     <li>
       <a href="../articles/whiskR vignette.html">whiskR: An R package for calculating Von Bertanlanffy growth model variables</a>
     </li>
+    <li>
+      <a href="../articles/whiskR_vignette.html">whiskR: An R package for calculating Von Bertanlanffy growth model variables</a>
+    </li>
   </ul>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
@@ -121,13 +124,11 @@
     </div>
 
     <div class="ref-description">
-    
     <p>The <code>k</code> function is used to calculate the growth coefficient 'k' used in the von Bertanlanffy growth models.</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>k</span>(<span class='no'>L.max</span>, <span class='no'>L.asym</span>, <span class='no'>Time</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>k</span>(<span class='kw'>L.max</span>, <span class='kw'>L.asym</span>, <span class='kw'>Time</span>)</pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -144,20 +145,21 @@
       <td><p>numeric; estimated time to reach maximum length</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>The value returned is the growth coefficient 'k' used in the von Bertanlanffy growth model</p>
-    
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Hall-Aspland, S. A., Rogers, T. L., &amp; Canfield, R. B. (2005). Stable carbon and nitrogen isotope
 analysis reveals seasonal variation in the diet of leopard seals. Marine Ecology Progress Series, 305, 249-259.</p>
-    
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>The function was written by Gary Truong with collaboration from Ben Walker
+and Anna Lewis from the University of New South Wales</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>k</span>(<span class='kw'>L.max</span> <span class='kw'>=</span> <span class='fl'>148.5</span>, <span class='kw'>L.asym</span> <span class='kw'>=</span> <span class='fl'>150</span>, <span class='kw'>Time</span> <span class='kw'>=</span> <span class='fl'>365</span>)</div><div class='output co'>#&gt; [1] "0.01262"</div><div class='input'>
-</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>k</span>(L.max = <span class='fl'>148.5</span>, L.asym = <span class='fl'>150</span>, Time = <span class='fl'>365</span>)</div><div class='output co'>#&gt; [1] 0.01262</div><div class='input'></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -173,7 +175,7 @@ analysis reveals seasonal variation in the diet of leopard seals. Marine Ecology
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>
