@@ -10,11 +10,13 @@ output: html_document
 #install.packages("roxygen2")
 #install.packages("usethis")
 
-
 library(devtools)
 library(roxygen2)
 library(tidyverse)
 
+devtools::install_github("GaryTruong/whiskR")
+
+library(whiskR)
 # devtools::create("whiskR")
 ```
 
@@ -94,17 +96,7 @@ devtools::document()
 
 
 
-```{r}
-devtools::load_all()
 
-
-devtools::install()
-library(whiskR)
-
-devtools::install_github("GaryTruong/whiskR")
-library(whiskR)
-?k
-```
 
 Create a vignette
 ```{r}
