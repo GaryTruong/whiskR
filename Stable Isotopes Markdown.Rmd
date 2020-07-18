@@ -188,11 +188,11 @@ MaxTime(150,170,0.0126)
 ```
 
 ```{r}
-usethis::use_testthat()
-
-
-devtools::test()
-
-use_travis()
+# usethis::use_testthat()
+# use_test("TP1")
+# 
+# devtools::test()
+# 
+# #use_travis()
 ```
 

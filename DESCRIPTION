@@ -1,6 +1,6 @@
 Package: whiskR
 Title: Stable Isotope Analysis for Whisker Samples
-Version: 1.0
+Version: 0.0.1
 Authors@R: c(
     person("Gary",
            "Truong",
