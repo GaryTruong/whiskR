@@ -27,7 +27,7 @@ Variables that are used include whisker length, asymptotic length, the growth co
 
 To install `whiskR` in R:
 
-```{r, eval = F}
+```{r , eval = F}
 # Install pacman 
 install.packages("pacman")
 

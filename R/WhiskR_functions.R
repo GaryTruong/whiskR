@@ -110,17 +110,20 @@ MaxTime <- function(L , L.asym, k){
 #paste(Time, "days", sep = " ")
 
 
-section <- function(L, L.asym, Time, k){
+
+
+section <- function(L, L.asym, k, Time = 1){
   out <- list(0)
+  name <- value <- L.start <- L.end <- NULL
   a <- as.numeric(whiskR::LP1(L, L.asym, Time, k))
   out[1] <- a
   out[2] <- Time
   out[3] <- L
   out[[3]][2] <- a
-  for(i in 1:30){
-    if(a > 0){
+  for(i in 1:1000){
+    if(a > 0 & a < L){
       a <- as.numeric(out[[1]][i]) %>%
-        whiskR::LP1(170, 14, 0.0126)
+        whiskR::LP1(L.asym, Time, k)
       out[[1]][i+1] = a
       out[[2]][i+1] = Time
       out[[3]][i+2] = a
@@ -129,11 +132,12 @@ section <- function(L, L.asym, Time, k){
     }
   }
   x <- tibble::enframe(as.numeric(out[[3]])) %>%
-    select(name, L = value)
+    dplyr::select(name, L.start = value)
   y <- tibble::enframe(as.numeric(out[[2]])) %>%
-    select(name, time = value)
+    dplyr::select(name, time = value)
   z <- tibble::enframe(as.numeric(out[[1]])) %>%
-    select(name,Lp1 = value)
-  x %>% left_join(z) %>% left_join(y)%>%
-    filter(Lp1 >0)
+    dplyr::select(name,L.end = value)
+  x %>% dplyr::left_join(z) %>% dplyr::left_join(y) %>%
+    dplyr::filter(L.end > 0) %>%
+    dplyr::mutate(SectionLength = L.start-L.end, Date = date())
 }

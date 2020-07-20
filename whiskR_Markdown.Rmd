@@ -9,10 +9,15 @@ output: html_document
 #install.packages("devtools")
 #install.packages("roxygen2")
 #install.packages("usethis")
+devtools::install_github("r-lib/pkgdown")
+
+
+
 
 library(devtools)
 library(roxygen2)
 library(tidyverse)
+library(pkgdown)
 
 devtools::install_github("GaryTruong/whiskR")
 
@@ -110,31 +115,24 @@ Creating  Website
 #install.packages("rpkgdown")
 
 devtools::install_github("r-lib/pkgdown")
-library(rpkgdown)
+library(pkgdown)
 
 # Run once to configure package to use pkgdown
 usethis::use_pkgdown()
 # Run to build the website
 pkgdown::build_site()
+
+
+## running R CMD check through devtools
+devtools::check()
 ```
 
 ```{r}
-LP1(150,170,14,0.0126)
-LP1(145.7,170,14,0.0126)
-LP1(140.5,170,14,0.0126)
-LP1(134.2,170,14,0.0126)
-LP1(126.5,170,14,0.0126)
-LP1(117.2,170,14,0.0126)
-LP1(105.9,170,14,0.0126)
-LP1(92.17,170,14,0.0126)
-LP1(75.5,170,14,0.0126)
-LP1(55.26,170,14,0.0126)
-LP1(30.68,170,14.3,0.0126)
 
-14*11
+
 TP1(L=150 ,L.asym=170, LP1=140.5, k=0.0126)
 
-14*12
+
 MaxTime(150,170,0.0126)
 library(dplyr)
 
@@ -175,7 +173,7 @@ section <- function(L, L.asym, k, Time = 1){
     dplyr::select(name, time = value)
   z <- tibble::enframe(as.numeric(out[[1]])) %>%
     dplyr::select(name,L.end = value)
-  x %>% left_join(z) %>% left_join(y)%>%
+  x %>% dplyr::left_join(z) %>% dplyr::left_join(y)%>%
     dplyr::filter(L.end > 0) %>%
     dplyr::mutate(SectionLength = L.start-L.end, Date = date())
 }
