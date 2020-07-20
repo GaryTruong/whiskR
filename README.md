@@ -8,6 +8,8 @@ The whiskR package uses the Von Bertanlanffy growth model equations to calculate
 
 Our website and vignette can be found using the links: [`whiskR`](https://garytruong.github.io/whiskR/index.html) and [Vignette](https://garytruong.github.io/whiskR/articles/whiskR%20vignette.html)
 
+whiskR github link: (https://github.com/GaryTruong/whiskR)
+
 To install `whiskR` in R:
 
 ```
