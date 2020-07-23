@@ -72,7 +72,7 @@ k <- function(L.max, L.asym, Time){
 
 #' Calculate Time Period Represented by the Intradermal Section of the Whisker
 #'
-#' `IntraTime` is used to calculate the time period represented by the intradermal section of the whisker
+#' `intraTime` is used to calculate the time period represented by the intradermal section of the whisker
 #' @param L      numeric; length of the entire whisker minus the intradermal section
 #' @param L.int  numeric; intradermal length of the whisker
 #' @param L.asym numeric; asymptotic length
@@ -83,8 +83,8 @@ k <- function(L.max, L.asym, Time){
 #' and Anna Lewis from the University of New South Wales
 #' @return The value returned is the number of days represented by the intradermal section of the whisker
 #' @examples
-#' IntraTime(L = 140, L.int = 10, L.asym = 150, k = 0.0126)
-IntraTime <- function(L, L.int, L.asym, k){
+#' intraTime(L = 140, L.int = 10, L.asym = 150, k = 0.0126)
+intraTime <- function(L, L.int, L.asym, k){
   time = format((L.int)/(k*(L.asym - (L - L.int))), digits = 3, nsmall = 0)
   as.numeric(time)
 }
@@ -92,7 +92,7 @@ IntraTime <- function(L, L.int, L.asym, k){
 
 #' Calculate Maximum Time Represented by Sample
 #'
-#' `MaxTime` uses the simple Von Bertanlanffy equations to calculate the time represented by the entire sample
+#' `maxTime` uses the simple Von Bertanlanffy equations to calculate the time represented by the entire sample
 #' @param L      numeric; length of the entire sample
 #' @param L.asym numeric; asymptotic length
 #' @param k      numeric; growth coefficient, calculate using the function k
@@ -102,16 +102,21 @@ IntraTime <- function(L, L.int, L.asym, k){
 #' and Anna Lewis from the University of New South Wales
 #' @return The value returned is the number of days represented by the entire sample
 #' @examples
-#' MaxTime(L = 140, L.asym = 150, k = 0.0126)
-MaxTime <- function(L , L.asym, k){
+#' maxTime(L = 140, L.asym = 150, k = 0.0126)
+maxTime <- function(L , L.asym, k){
   time = format((-log(1-L/L.asym))/(k), digits = 4, nsmall = 1)
   as.numeric(time)
 }
 #paste(Time, "days", sep = " ")
 
 
-
-
+#' Generate a Table of Section Positions
+#'
+#' `section` uses the LP1 function to generate a tibble of all the sections legnths representing 1 day of growth.
+#' @param L       numeric; the starting length of the sample
+#' @param L.asym. numeric; asymptotic length
+#' @param k       numeric; growth coefficient, calculate using the function k
+#' @param Time    numeric; period of growth to be represented by each section. Default is 1 day.
 section <- function(L, L.asym, k, Time = 1){
   out <- list(0)
   name <- value <- L.start <- L.end <- NULL
