@@ -84,7 +84,7 @@ TP1()
 
 The maxTime() function calculates the maximum time represented by a whisker 
 
-```{r}
+```{r, eval = F}
 maxTime()
 ```
 
@@ -92,7 +92,7 @@ maxTime()
 
 section() uses the LP1 function to generate a table of all of the section lengths corresponding to a specified period time of growth. The default period of time represented is 1 day. A higher number of sections generates samples that approximate the actual time represented by the whisker growth. A fewer number of cuts or higher period of time represented results with an underestimation of the actual time represented by the whisker. 
 
-```{r}
+```{r, eval = F}
 section()
 ```
 
