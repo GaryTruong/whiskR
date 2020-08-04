@@ -117,6 +117,8 @@ maxTime <- function(L , L.asym, k){
 #' @param L.asym. numeric; asymptotic length
 #' @param k       numeric; growth coefficient, calculate using the function k
 #' @param Time    numeric; period of growth to be represented by each section. Default is 1 day.
+#' @importFrom magrittr %>%
+#' @export
 section <- function(L, L.asym, k, Time = 1){
   out <- list(0)
   name <- value <- L.start <- L.end <- NULL

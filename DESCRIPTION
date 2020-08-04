@@ -28,5 +28,9 @@ Suggests:
     dplyr,
     knitr,
     rmarkdown,
-    testthat
+    testthat,
+    magrittr
+Imports: 
+    magrittr,
+    tibble
 VignetteBuilder: knitr

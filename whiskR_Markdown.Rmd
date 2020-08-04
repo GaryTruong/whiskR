@@ -12,7 +12,7 @@ output: html_document
 devtools::install_github("r-lib/pkgdown")
 
 
-
+library(magrittr)
 
 library(devtools)
 library(roxygen2)
