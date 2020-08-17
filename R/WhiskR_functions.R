@@ -18,7 +18,7 @@
 #' LP1(L = 100, L.asym = 150, Time = 28, k = 0.0126)
 #'
 LP1 <- function(L, L.asym, Time, k){
-  section = format((L - (Time*(k*L.asym)))/(1-(Time*k)), digits = 5, nsmall = 1)
+  section = format((L - (Time*(k*L.asym)))/(1-(Time*k)), digits = 4, nsmall = 2)
   as.numeric(section)
 }
 #paste(section, "mm", sep = "")
