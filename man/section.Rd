@@ -4,7 +4,7 @@
 \alias{section}
 \title{Generate a Table of Section Positions}
 \usage{
-section(L, L.asym, k, Time = 1)
+section(L, L.asym, k, Time = 1, date = "1900/01/01")
 }
 \arguments{
 \item{L}{numeric; the starting length of the sample}
@@ -14,6 +14,8 @@ section(L, L.asym, k, Time = 1)
 \item{k}{numeric; growth coefficient, calculate using the function k}
 
 \item{Time}{numeric; period of growth to be represented by each section. Default is 1 day.}
+
+\item{date}{character string; date that the sample was collected from the specimen. Default is "1900/01/01" . Format should be \%Y\%m\%d with " " as a character string. The date is converted to Date format within the function.}
 }
 \value{
 The table returned are all the sections represented by 1 day time periods by default
@@ -22,7 +24,7 @@ The table returned are all the sections represented by 1 day time periods by def
 \code{section} uses the LP1 function to generate a tibble of all the sections lengths representing 1 day of growth.
 }
 \examples{
-section(L = 140, L.asym = 150, k = 0.0126) # uses the default time period of 1 day
+section(L = 140, L.asym = 150, k = 0.0126) # uses the default time period of 1 day and default date of "1900/01/01"
 section(L = 140, L.asym = 150, k = 0.0126, Time = 7) # specifying Time = 7 creates a table with sample sections representing 7 days
 }
 \author{
