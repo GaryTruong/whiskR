@@ -13,7 +13,6 @@ devtools::install_github("r-lib/pkgdown")
 
 
 library(magrittr)
-
 library(devtools)
 library(roxygen2)
 library(tidyverse)
@@ -128,8 +127,6 @@ devtools::check()
 ```
 
 ```{r}
-
-
 TP1(L=150 ,L.asym=170, LP1=140.5, k=0.0126)
 
 
@@ -179,10 +176,44 @@ section <- function(L, L.asym, k, Time = 1){
 }
 
 
-b <- section(150,170, 0.0126, 5)
+b <- section(150,170, 0.0126, 1)
 
+section1 <- function(L, L.asym, k, Time = 1, date = "1970/01/01"){
+  out <- list(0)
+  name <- value <- L.start <- L.end <- NULL
+  a <- as.numeric(whiskR::LP1(L, L.asym, Time, k))
+  out[1] = a
+  out[2] = Time
+  out[3] = L
+  out[4] = lubridate::as_date(date)
+  out[[3]][2] = a
+  for(i in 1:1000){
+    if(a > 0 & a < L){
+      a <- as.numeric(out[[1]][i]) %>%
+        whiskR::LP1(L.asym, Time, k)
+      out[[1]][i+1] = a
+      out[[2]][i+1] = Time
+      out[[3]][i+2] = a
+      out[[4]][i+1] = lubridate::as_date(date) - Time*i
+    }else{
+      stop
+    }
+  }
+  x <- tibble::enframe(as.numeric(out[[3]])) %>%
+    dplyr::select(name, L.start = value)
+  y <- tibble::enframe(as.numeric(out[[2]])) %>%
+    dplyr::select(name, time = value)
+  z <- tibble::enframe(as.numeric(out[[1]])) %>%
+    dplyr::select(name,L.end = value)
+  w <- tibble::enframe(lubridate::as_date(out[[4]])) %>%
+    dplyr::select(name, date = value)
+  x %>% dplyr::left_join(z) %>% dplyr::left_join(y) %>% dplyr::left_join(w) %>%
+    dplyr::filter(L.end > 0) %>%
+    dplyr::mutate(SectionLength = L.start-L.end)
+}
 
-MaxTime(150,170,0.0126)
+c <- section1(150,170, 0.0126, 1, "2006/06/22")
+
 ```
 
 ```{r}

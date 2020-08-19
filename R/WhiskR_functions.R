@@ -112,13 +112,19 @@ maxTime <- function(L , L.asym, k){
 
 #' Generate a Table of Section Positions
 #'
-#' `section` uses the LP1 function to generate a tibble of all the sections legnths representing 1 day of growth.
+#' `section` uses the LP1 function to generate a tibble of all the sections lengths representing 1 day of growth.
 #' @param L       numeric; the starting length of the sample
-#' @param L.asym. numeric; asymptotic length
+#' @param L.asym numeric; asymptotic length
 #' @param k       numeric; growth coefficient, calculate using the function k
 #' @param Time    numeric; period of growth to be represented by each section. Default is 1 day.
 #' @importFrom magrittr %>%
 #' @export
+#' @author The function was written by Gary Truong with collaboration from Ben Walker
+#' and Anna Lewis from the University of New South Wales
+#' @return The table returned are all the sections represented by 1 day time periods by default
+#' @examples
+#' section(L = 140, L.asym = 150, k = 0.0126) # uses the default time period of 1 day
+#' section(L = 140, L.asym = 150, k = 0.0126, Time = 7) # specifying Time = 7 creates a table with sample sections representing 7 days
 section <- function(L, L.asym, k, Time = 1){
   out <- list(0)
   name <- value <- L.start <- L.end <- NULL

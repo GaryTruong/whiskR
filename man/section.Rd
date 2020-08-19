@@ -9,12 +9,23 @@ section(L, L.asym, k, Time = 1)
 \arguments{
 \item{L}{numeric; the starting length of the sample}
 
+\item{L.asym}{numeric; asymptotic length}
+
 \item{k}{numeric; growth coefficient, calculate using the function k}
 
 \item{Time}{numeric; period of growth to be represented by each section. Default is 1 day.}
-
-\item{L.asym.}{numeric; asymptotic length}
+}
+\value{
+The table returned are all the sections represented by 1 day time periods by default
 }
 \description{
-\code{section} uses the LP1 function to generate a tibble of all the sections legnths representing 1 day of growth.
+\code{section} uses the LP1 function to generate a tibble of all the sections lengths representing 1 day of growth.
+}
+\examples{
+section(L = 140, L.asym = 150, k = 0.0126) # uses the default time period of 1 day
+section(L = 140, L.asym = 150, k = 0.0126, Time = 7) # specifying Time = 7 creates a table with sample sections representing 7 days
+}
+\author{
+The function was written by Gary Truong with collaboration from Ben Walker
+and Anna Lewis from the University of New South Wales
 }
