@@ -10,6 +10,7 @@ output: html_document
 #install.packages("roxygen2")
 #install.packages("usethis")
 devtools::install_github("r-lib/pkgdown")
+install.packages("Rtools")
 
 
 library(magrittr)

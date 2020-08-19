@@ -18,7 +18,7 @@ Description: Stable isotope analysis on whisker samples. Use the functions
     in this package to calculate k(growth coefficient), calculate sample length
     based on time, calculate time represented by sample section, calculate max
     time represented by an entire whisker.
-License: GPL
+License: GPL-3 + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

@@ -128,7 +128,7 @@ maxTime <- function(L , L.asym, k){
 #' section(L = 140, L.asym = 150, k = 0.0126, Time = 7) # specifying Time = 7 creates a table with sample sections representing 7 days
 section <- function(L, L.asym, k, Time = 1, date = "1900/01/01"){
   out <- list(0)
-  name <- value <- L.start <- L.end <- NULL
+  name <- value <- L.start <- L.end <- SectionLength <- NULL
   a <- as.numeric(whiskR::LP1(L, L.asym, Time, k))
   out[1] = a
   out[2] = Time
