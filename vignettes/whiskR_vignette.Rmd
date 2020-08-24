@@ -21,13 +21,15 @@ knitr::opts_chunk$set(
 
 The formulas used in the functions are derived from the Von Bertanlanffy growth model equations.
 
-Variables that are used include whisker length, asymptotic length, the growth coefficient k and time.  
+Variables that are used include whisker length, asymptotic length, the growth coefficient k and time. 
+
+The segment() function is used for calculating the sampling sections for a single whisker. It uses the LP1 function in this package using 1 day as the time arrgument as default
 
 # 2. Installation
 
 To install `whiskR` in R:
 
-```{r, eval = F}
+```{r , eval = F}
 # Install pacman 
 install.packages("pacman")
 
@@ -43,8 +45,20 @@ library(whiskR)
 ## 3.1 Calculating *k* (growth coefficient)
 
 ```{r, eval = F}
-k()
+k(L.max, L.asym, Time)
+
+k(L.max = 148.5, L.asym = 150, Time = 365)
+
+
 ```
+L.max is the maximum length that the whisker will grow to.
+The example provided has a max length of 148.5mm
+
+L.asym is the asymptotic length for that whisker position.
+The asymptotic length in the example is 150mm
+
+Time is the time period that the whisker will grow for until it reaches maximum length
+The time period for the example given is 365 days.
 
 
 ## 3.2 Calculating segment length
@@ -66,23 +80,20 @@ TP1() is used to calculate how much time is represented by a given segment of wh
 TP1()
 ```
 
+## 3.4 Calculating the Maximum Time represented by a whisker
 
----
-title: "whiskR_vignette"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{whiskR_vignette}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
----
+The maxTime() function calculates the maximum time represented by a whisker 
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+```{r, eval = F}
+maxTime()
 ```
 
-```{r setup}
-library(whiskR)
+## 3.5 Generate a table of section represented by a period time of growth
+
+section() uses the LP1 function to generate a table of all of the section lengths corresponding to a specified period time of growth. The default period of time represented is 1 day. A higher number of sections generates samples that approximate the actual time represented by the whisker growth. A fewer number of cuts or higher period of time represented results with an underestimation of the actual time represented by the whisker. 
+
+```{r, eval = F}
+section()
 ```
+
+

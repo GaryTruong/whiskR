@@ -6,7 +6,9 @@
 
 The whiskR package uses the Von Bertanlanffy growth model equations to calculate the different variables needed for stable isotope analysis of whiskers or any other tissue types that have non-linear growth. 
 
-Our website and vignette can be found using the links: [`whiskR`](https://GaryTruong.github.io/whiskR) and [Vignette](https://garytruong.github.io/whiskR/articles/whiskR%20vignette.html)
+Our website and vignette can be found using the links: [`whiskR`](https://garytruong.github.io/whiskR/index.html) and [Vignette](https://garytruong.github.io/whiskR/articles/whiskR_vignette.html)
+
+whiskR github link: (https://github.com/GaryTruong/whiskR)
 
 To install `whiskR` in R:
 
