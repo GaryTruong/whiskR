@@ -1,6 +1,7 @@
-^stableisotopes\.Rproj$
 ^\.Rproj\.user$
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
 ^\.travis\.yml$
+^whiskR\.Rproj$
+^whiskR_Markdown\.Rmd$
