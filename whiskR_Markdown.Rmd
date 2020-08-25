@@ -11,7 +11,9 @@ output: html_document
 #install.packages("usethis")
 devtools::install_github("r-lib/pkgdown")
 install.packages("Rtools")
+# install.packages("installr")
 
+#installr::install.Rtools(choose_version = TRUE, check = FALSE, GUI = TRUE,  page_with_download_url = "https://cran.r-project.org/bin/windows/Rtools/")
 
 library(magrittr)
 library(devtools)
