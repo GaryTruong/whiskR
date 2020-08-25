@@ -93,40 +93,6 @@ Date
 
 ```
 
-
-Generate documents for functions
-```{r}
-devtools::document()
-```
-
-
-
-
-
-Create a vignette
-```{r}
-library(usethis)
-usethis::use_vignette("whiskR_vignette")
-```
-
-Creating  Website
-```{r}
-# not working for R 4.0.2
-#install.packages("rpkgdown")
-
-devtools::install_github("r-lib/pkgdown")
-library(pkgdown)
-
-# Run once to configure package to use pkgdown
-usethis::use_pkgdown()
-# Run to build the website
-pkgdown::build_site()
-
-
-## running R CMD check through devtools
-devtools::check()
-```
-
 ```{r}
 TP1(L=150 ,L.asym=170, LP1=140.5, k=0.0126)
 
@@ -192,6 +158,39 @@ section <- function(L, L.asym, k, Time = 1, date = "1900/01/01"){
 c <- section(169.5,170, 0.0126, 1)
 ```
 
+
+Generate documents for functions
+```{r}
+devtools::document()
+```
+
+
+Create a vignette
+```{r}
+library(usethis)
+usethis::use_vignette("whiskR_vignette")
+```
+
+Creating  Website
+```{r}
+# not working for R 4.0.2
+#install.packages("rpkgdown")
+
+devtools::install_github("r-lib/pkgdown")
+library(pkgdown)
+
+# Run once to configure package to use pkgdown
+usethis::use_pkgdown()
+# Run to build the website
+pkgdown::build_site()
+
+
+## running R CMD check through devtools
+devtools::check()
+```
+
+
+Testing
 ```{r}
 # usethis::use_testthat()
 # use_test("TP1")
