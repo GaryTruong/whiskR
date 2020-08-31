@@ -27,11 +27,11 @@ library(whiskR)
 # devtools::create("whiskR")
 ```
 
-Add functions 
+Add functions
 ```{r}
 x <- (92.6-(14*(0.0126*141.5)))/(1-(14*0.0126))
 
-# LP1 calculates the cut section length that should be cut to obtain a defined time period. 
+# LP1 calculates the cut section length that should be cut to obtain a defined time period.
 LP1 <- function(L, Time, k, L.asym){
   section = format((L - (Time*(k*L.asym)))/(1-(Time*k)), digits = 4, nsmall = 1)
   paste(section, "mm", sep = "")
@@ -40,14 +40,14 @@ LP1 <- function(L, Time, k, L.asym){
 # L.asym is asymptotic length which is longest recorded length + 1% at the given position
 # L is length of cut or plucked whisker
 # Time is specified numnber of days represented by sample
-# This function does not factor in intradermal length 
+# This function does not factor in intradermal length
 
 LP1(156.2,75, 0.0126, 171.4)
 
 LP1(129.5, 14, 0.0126, 150.3)
 LP1(125.045, 14, 0.0126, 150.3)
 
-#TP1 calculates the time period that is represented based on a cut section 
+#TP1 calculates the time period that is represented based on a cut section
 TP1 <- function(Lp, Lp1, k, L.asym){
   time = format((Lp - Lp1)/(k*(L.asym-Lp1)), digits = 3, nsmall = 0)
   paste(time, "days", sep = " ")
@@ -56,7 +56,7 @@ TP1 <- function(Lp, Lp1, k, L.asym){
  ## Simple Von Bertanlanffy equation for L and T
 ## L = L.asym * (1-exp(-KT))
 ## T = (-log(1-156.2/171.4))/(0.0126)
-  
+
 
 # MaxTime uses simple Von Bertanlanffy model (growth function) to caclulate maximum theoretically time that the sample whisker represents
 MaxTime <- function(L , L.asym, k){
@@ -89,7 +89,7 @@ Intra.time(5.3, 163.4, 127.8, 0.0126)
 ## Vindi tassie devil
 MaxTime(127.8, 163.4, 0.0126)
 
-#Vindi sampled on 1st August 2018 , 120.9 max days, should go back to april 
+#Vindi sampled on 1st August 2018 , 120.9 max days, should go back to april
 
 Date
 
@@ -103,7 +103,7 @@ MaxTime(150,170,0.0126)
 library(dplyr)
 
 sample <- function(L, L.asym, Time, k){
-  a <- as.numeric(whiskR::LP1(L, L.asym, Time, k)) 
+  a <- as.numeric(whiskR::LP1(L, L.asym, Time, k))
   b <- as.numeric(whiskR::LP1(L, L.asym, Time, k)) %>%
     whiskR::LP1(L.asym, Time, k)
   as.numeric(c(a,b,Time))
@@ -135,7 +135,7 @@ section <- function(L, L.asym, k, Time = 1, date = "1900/01/01"){
     else if(a <0){
       out[[1]][i] = 0
       out[[2]][i] = 1 + whiskR::TP1(a, L.asym, 0, k)
-      out[[4]][i] = lubridate::as_date(date) - Time*(i-1) 
+      out[[4]][i] = lubridate::as_date(date) - Time*(i-1)
     }
     else{
       stop
@@ -150,7 +150,7 @@ section <- function(L, L.asym, k, Time = 1, date = "1900/01/01"){
   w <- tibble::enframe(lubridate::as_date(out[[4]])) %>%
     dplyr::select(name, date = value)
   x %>% dplyr::left_join(z, by = "name") %>%
-    dplyr::left_join(y, by = "name") %>% 
+    dplyr::left_join(y, by = "name") %>%
     dplyr::left_join(w, by = "name") %>%
     dplyr::filter(L.start > 0) %>%
     dplyr::mutate(SectionLength = L.start-L.end) %>%
@@ -196,9 +196,8 @@ Testing
 ```{r}
 # usethis::use_testthat()
 # use_test("TP1")
-# 
+#
 # devtools::test()
-# 
+#
 # #use_travis()
 ```
-
