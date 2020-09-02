@@ -5,7 +5,7 @@
   
 # whiskR
 
-The `whiskR` package provides functions for calculating Von Bertanlanffy growth parameters needed for stable isotope analysis of whiskers or any other tissue types that have non-linear growth. 
+`whiskR` is an R package that provides functions for calculating Von Bertanlanffy growth parameters needed for stable isotope analysis of whiskers or any other tissue types that have non-linear growth. 
 
 # Introduction
 
