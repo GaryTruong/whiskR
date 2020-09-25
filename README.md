@@ -7,6 +7,8 @@
 
 `whiskR` is an R package that provides functions for calculating Von Bertanlanffy growth parameters needed for stable isotope analysis of whiskers or any other tissue types that have non-linear growth. 
 
+## whiskR
+
 # Introduction
 
 Animal whiskers or vibrissae grow along an exponential growth curve which is represented by the Von Bertanlanffy growth equation (von Bertanlanffy, 1938)
